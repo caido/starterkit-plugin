@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+
+    "jsx": "preserve",
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "noUnusedLocals": true,
+
+    "useDefineForClassFields": true,
+    "isolatedModules": true,
+
+    "baseUrl": "."
+  },
+  "include": ["./src/**/*.ts"]
+}
