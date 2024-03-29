@@ -1,7 +1,7 @@
 {
-  "name": "plugin-template",
+  "name": "starterkit-plugin",
   "version": "0.1.0",
-  "description": "Template for Caido plugin",
+  "description": "StarterKit plugin for Caido",
   "author": "Caido Labs Inc. <dev@caido.io>",
   "license": "CC0-1.0",
   "main": "index.js",
