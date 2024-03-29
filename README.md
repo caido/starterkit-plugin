@@ -25,3 +25,10 @@ This is the starter kit for the Caido plugin system.
 For now it only supports Frontend plugins.
 
 It is very early so expect a lot of improvements over the next months.
+
+## 🏎️ Usage
+
+1. `npm i`
+1. Make some modifications in `src`
+1. `npm run build`
+1. Use the `script.js` in `dist`
