@@ -1,0 +1,19 @@
+{
+  "id": "starterkit-plugin",
+  "name": "StarterKit Plugin",
+  "description": "This is a starterkit plugin",
+  "author": {
+    "name": "Caido Labs Inc.",
+    "email": "dev@caido.io",
+    "url": "https://github.com/caido/starterkit-plugin"
+  },
+  "plugins": [
+    {
+      "kind": "frontend",
+      "id": "starterkit-plugin-frontend",
+      "name": "StarterKit Plugin Frontend",
+      "entrypoint": "frontend/script.js",
+      "style": "frontend/style.css"
+    }
+  ]
+}
