@@ -1,6 +1,7 @@
 {
   "id": "starterkit-plugin",
   "name": "StarterKit Plugin",
+  "version": "0.1.0",
   "description": "This is a starterkit plugin",
   "author": {
     "name": "Caido Labs Inc.",
