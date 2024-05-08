@@ -1,11 +1,14 @@
-import { Caido } from "@caido/sdk-frontend";
+import type { Caido } from "@caido/sdk-frontend";
 import { helper } from "./helper";
 
-Caido.commands.register("my-sample-command", {
-  name: "My Sample Command",
-  run: () => {
-    helper();
-  },
-});
+export const init = (caido: Caido) => {
+  caido.commands.register("my-sample-command", {
+    name: "My Sample Command",
+    run: () => {
+      helper();
+    },
+  });
 
-Caido.commandPalette.register("my-sample-command");
+  caido.commandPalette.register("my-sample-command");
+}
+

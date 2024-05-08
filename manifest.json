@@ -11,8 +11,8 @@
   "plugins": [
     {
       "kind": "frontend",
-      "id": "starterkit-plugin-frontend",
-      "name": "StarterKit Plugin Frontend",
+      "id": "caido-extra-commands",
+      "name": "Extra Commands",
       "entrypoint": "frontend/script.js",
       "style": "frontend/style.css"
     }
