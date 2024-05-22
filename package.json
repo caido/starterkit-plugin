@@ -4,15 +4,17 @@
   "description": "StarterKit plugin for Caido",
   "author": "Caido Labs Inc. <dev@caido.io>",
   "license": "CC0-1.0",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "vite build"
   },
   "dependencies": {
-    "@caido/sdk-frontend": "0.0.2"
+    "@caido/sdk-frontend": "0.37.0"
   },
   "devDependencies": {
     "typescript": "5.4.3",
-    "vite": "5.2.7"
+    "vite": "5.2.7",
+    "vite-plugin-static-copy": "1.0.3",
+    "vite-plugin-zip-pack": "1.2.3"
   }
 }

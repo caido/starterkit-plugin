@@ -28,7 +28,7 @@ It is very early so expect a lot of improvements over the next months.
 
 ## 🏎️ Usage
 
-1. `npm i`
+1. `pnpm install`
 1. Make some modifications in `src`
-1. `npm run build`
-1. Use the `script.js` in `dist`
+1. `pnpm build`
+1. Upload the plugin.zip in the `dist-zip` folder to your Caido instance

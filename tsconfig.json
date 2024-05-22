@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
 
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "sourceMap": true,
     "noUnusedLocals": true,
