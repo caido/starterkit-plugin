@@ -9,7 +9,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@caido/sdk-frontend": "0.0.2"
+    "@caido/sdk-frontend": "0.37.0"
   },
   "devDependencies": {
     "typescript": "5.4.3",

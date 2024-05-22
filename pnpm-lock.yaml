@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@caido/sdk-frontend':
-        specifier: 0.0.2
-        version: 0.0.2
+        specifier: 0.37.0
+        version: 0.37.0
     devDependencies:
       typescript:
         specifier: 5.4.3
@@ -27,8 +27,8 @@ importers:
 
 packages:
 
-  '@caido/sdk-frontend@0.0.2':
-    resolution: {integrity: sha512-JDLgEnZEQ9kO+Ndx9yfmw1XPEnyls1mxSXTQwSUE4kJNL32OtoHhAEj4VuoB3PbAgBjstxS0leEOoZLY5pJLkA==}
+  '@caido/sdk-frontend@0.37.0':
+    resolution: {integrity: sha512-+rhS7IPihH5si5+RBtT+KZiBu0kh0zWKnj6Wxx03tX5NgJv+TpVDWnSDvCxXph5rVh+HExtbVyiYEUKxyZ6nrQ==}
 
   '@esbuild/aix-ppc64@0.20.2':
     resolution: {integrity: sha512-D+EBOJHXdNZcLJRBkhENNG8Wji2kgc9AZ9KiPr1JuZjsNtyHzrsfLRrY0tk2H2aoFu6RANO1y1iPPUCDYWkb5g==}
@@ -474,7 +474,7 @@ packages:
 
 snapshots:
 
-  '@caido/sdk-frontend@0.0.2': {}
+  '@caido/sdk-frontend@0.37.0': {}
 
   '@esbuild/aix-ppc64@0.20.2':
     optional: true
