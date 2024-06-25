@@ -19,6 +19,5 @@
     "isolatedModules": true,
 
     "baseUrl": "."
-  },
-  "include": ["./src/**/*.ts"]
+  }
 }

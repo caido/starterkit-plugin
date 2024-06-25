@@ -15,6 +15,13 @@
       "name": "Extra Commands",
       "entrypoint": "frontend/script.js",
       "style": "frontend/style.css"
+    },
+    {
+      "kind": "backend",
+      "id": "caido-extra-commands-backend",
+      "name": "Extra Commands Backend",
+      "runtime": "javascript",
+      "entrypoint": "backend/script.js"
     }
   ]
 }
