@@ -2,6 +2,7 @@ import JSZip from "jszip";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { validateManifest } from "@caido/plugin-manifest";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "../dist");
@@ -28,6 +29,10 @@ function addDirToZip(dirPath, zipFolder) {
 console.log("[*] Copying manifest file");
 const srcManifestPath = path.resolve(__dirname, "../manifest.json");
 const destManifestPath = path.join(DIST, "manifest.json");
+const data = JSON.parse(fs.readFileSync(srcManifestPath, "utf-8"));
+if (!validateManifest(data)) {
+  process.exit(1);
+}
 fs.copyFileSync(srcManifestPath, destManifestPath);
 
 console.log("[*] Creating zip");
