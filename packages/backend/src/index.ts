@@ -1,11 +1,15 @@
-function multiply(a: number): number {
-  return a * 5;
+import { Body } from "caido:utils";
+import { SDK, DefineAPI } from "caido:plugin";
+
+function multiply(sdk: SDK, a: number, b: number): number {
+  sdk.console.log(new Body("test")); // Example from common
+  return a * b;
 }
 
-export type API = {
+export type API = DefineAPI<{
   multiply: typeof multiply;
-};
+}>;
 
-export function init(sdk: any) {
+export function init(sdk: SDK) {
   sdk.api.register("multiply", multiply);
 }

@@ -11,6 +11,7 @@ export default defineConfig({
     },
     outDir: "../../dist/backend",
     rollupOptions: {
+      external: [/caido:.+/],
       output: {
         manualChunks: undefined,
       },
