@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@caido/plugin-manifest':
-        specifier: 0.1.1
-        version: 0.1.1
+        specifier: 0.1.2
+        version: 0.1.2
       jszip:
         specifier: 3.10.1
         version: 3.10.1
@@ -35,8 +35,8 @@ importers:
 
 packages:
 
-  '@caido/plugin-manifest@0.1.1':
-    resolution: {integrity: sha512-RmU6di72iKAJKuYWx7T7TDfj+hDbi99vQ3mefMsPubpk1b4RLRauWu90mXEB01EXaiHPRJ7Wjb94TBzq7zvObg==}
+  '@caido/plugin-manifest@0.1.2':
+    resolution: {integrity: sha512-oEyJYXgB81QOnRNDBjciZEjoQnbTkNLUS3VyKw8+hWF0ERtdbYeaO3QvYL6WMcY6yg7mGRpzVgirFIu/7lmbKQ==}
 
   '@caido/sdk-backend@0.1.6':
     resolution: {integrity: sha512-q9gGMPG+8VJtfI/jqmePKbw2PW3Dz4Ji5s0nZBL3odlUyRZZk3EnmXLXwk5xoK4dPc6G9BMzllpeoBxXGGAAEQ==}
@@ -390,7 +390,7 @@ packages:
 
 snapshots:
 
-  '@caido/plugin-manifest@0.1.1':
+  '@caido/plugin-manifest@0.1.2':
     dependencies:
       ajv: 8.16.0
 
