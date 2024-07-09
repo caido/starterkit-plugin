@@ -10,5 +10,9 @@
   },
   "dependencies": {
     "@caido/sdk-frontend": "0.37.0"
+  },
+  "devDependencies": {
+    "@caido/sdk-backend": "0.1.6",
+    "starterkit-plugin-backend": "workspace:*"
   }
 }

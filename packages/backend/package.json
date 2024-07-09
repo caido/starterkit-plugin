@@ -5,6 +5,7 @@
   "author": "Caido Labs Inc. <dev@caido.io>",
   "license": "CC0-1.0",
   "type": "module",
+  "types": "src/index.ts",
   "scripts": {
     "build": "vite build"
   },

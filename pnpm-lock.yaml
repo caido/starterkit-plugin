@@ -32,6 +32,13 @@ importers:
       '@caido/sdk-frontend':
         specifier: 0.37.0
         version: 0.37.0
+    devDependencies:
+      '@caido/sdk-backend':
+        specifier: 0.1.6
+        version: 0.1.6
+      starterkit-plugin-backend:
+        specifier: workspace:*
+        version: link:../backend
 
 packages:
 

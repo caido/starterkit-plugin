@@ -1,4 +1,5 @@
 import type { Caido } from "@caido/sdk-frontend";
+import type { API } from "starterkit-plugin-backend";
 
 import type { PluginStorage } from "./types";
 
