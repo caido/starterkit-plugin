@@ -9,7 +9,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@caido/sdk-frontend": "0.37.0"
+    "@caido/sdk-frontend": "https://github.com/caido/sdk-frontend#ib-backend-plugin-types"
   },
   "devDependencies": {
     "@caido/sdk-backend": "0.1.6",

@@ -30,8 +30,8 @@ importers:
   packages/frontend:
     dependencies:
       '@caido/sdk-frontend':
-        specifier: 0.37.0
-        version: 0.37.0
+        specifier: https://github.com/caido/sdk-frontend#ib-backend-plugin-types
+        version: https://codeload.github.com/caido/sdk-frontend/tar.gz/b1e702bb0209f4a8514211e25bffc0ef358f532d
     devDependencies:
       '@caido/sdk-backend':
         specifier: 0.1.6
@@ -48,8 +48,9 @@ packages:
   '@caido/sdk-backend@0.1.6':
     resolution: {integrity: sha512-q9gGMPG+8VJtfI/jqmePKbw2PW3Dz4Ji5s0nZBL3odlUyRZZk3EnmXLXwk5xoK4dPc6G9BMzllpeoBxXGGAAEQ==}
 
-  '@caido/sdk-frontend@0.37.0':
-    resolution: {integrity: sha512-+rhS7IPihH5si5+RBtT+KZiBu0kh0zWKnj6Wxx03tX5NgJv+TpVDWnSDvCxXph5rVh+HExtbVyiYEUKxyZ6nrQ==}
+  '@caido/sdk-frontend@https://codeload.github.com/caido/sdk-frontend/tar.gz/b1e702bb0209f4a8514211e25bffc0ef358f532d':
+    resolution: {tarball: https://codeload.github.com/caido/sdk-frontend/tar.gz/b1e702bb0209f4a8514211e25bffc0ef358f532d}
+    version: 0.38.0
 
   '@esbuild/aix-ppc64@0.20.2':
     resolution: {integrity: sha512-D+EBOJHXdNZcLJRBkhENNG8Wji2kgc9AZ9KiPr1JuZjsNtyHzrsfLRrY0tk2H2aoFu6RANO1y1iPPUCDYWkb5g==}
@@ -403,7 +404,7 @@ snapshots:
 
   '@caido/sdk-backend@0.1.6': {}
 
-  '@caido/sdk-frontend@0.37.0': {}
+  '@caido/sdk-frontend@https://codeload.github.com/caido/sdk-frontend/tar.gz/b1e702bb0209f4a8514211e25bffc0ef358f532d': {}
 
   '@esbuild/aix-ppc64@0.20.2':
     optional: true
