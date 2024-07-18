@@ -9,10 +9,10 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@caido/sdk-frontend": "https://github.com/caido/sdk-frontend#ib-backend-plugin-types"
+    "@caido/sdk-frontend": "0.39.0"
   },
   "devDependencies": {
-    "@caido/sdk-backend": "0.1.6",
+    "@caido/sdk-backend": "0.39.0",
     "starterkit-plugin-backend": "workspace:*"
   }
 }

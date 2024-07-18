@@ -10,6 +10,6 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@caido/sdk-backend": "0.1.6"
+    "@caido/sdk-backend": "0.39.0"
   }
 }

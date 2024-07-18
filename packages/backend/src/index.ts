@@ -1,15 +1,17 @@
 import { Body } from "caido:utils";
 import { SDK, DefineAPI } from "caido:plugin";
 
-function multiply(sdk: SDK, a: Date, b: number): number {
+function generateNumber(sdk: SDK, min: number, max: number): number {
   sdk.console.log(new Body("test")); // Example from utils
-  return a * b;
+
+  // Generate random number between min and max
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 export type API = DefineAPI<{
-  multiply: typeof multiply;
+  generateNumber: typeof generateNumber;
 }>;
 
 export function init(sdk: SDK) {
-  sdk.api.register("multiply", multiply);
+  sdk.api.register("generateNumber", generateNumber);
 }

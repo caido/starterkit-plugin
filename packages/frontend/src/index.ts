@@ -9,6 +9,7 @@ const Page = "/my-plugin" as const;
 const Commands = {
   increment: "my-plugin.increment",
   decrement: "my-plugin.decrement",
+  randomize: "my-plugin.randomize",
 } as const;
 
 const getCount = (sdk: CaidoSDK) => {
@@ -29,9 +30,11 @@ const increment = (sdk: CaidoSDK) => {
 const decrement = async (sdk: CaidoSDK) => {
   const count = getCount(sdk);
   sdk.storage.set({ count: count - 1 });
+}
 
-  const result = await sdk.backend.multiply(new Date(), 7);
-  console.log("Multiply called", result);
+const randomize = async (sdk: CaidoSDK) => {
+  const newNumber = await sdk.backend.generateNumber(0, 1000);
+  sdk.storage.set({ count: newNumber });
 }
 
 const addPage = (sdk: CaidoSDK) => {
@@ -48,12 +51,14 @@ const addPage = (sdk: CaidoSDK) => {
     <div>
       <button class="c-button" data-command="${Commands.increment}">Increment</button>
       <button class="c-button" data-command="${Commands.decrement}">Decrement</button>
+      <button class="c-button" data-command="${Commands.randomize}">Randomize</button>
     </div>
   `;
 
   const countElement = body.querySelector(".my-plugin__value") as HTMLElement;
   const incrementButton = body.querySelector(`[data-command="${Commands.increment}"]`) as HTMLElement;
   const decrementButton = body.querySelector(`[data-command="${Commands.decrement}"]`) as HTMLElement;
+  const randomizeButton = body.querySelector(`[data-command="${Commands.randomize}"]`) as HTMLElement;
 
   sdk.storage.onChange((newStorage) => {
     const storage = newStorage as PluginStorage | undefined;
@@ -70,6 +75,10 @@ const addPage = (sdk: CaidoSDK) => {
 
   decrementButton.addEventListener("click", () => {
     decrement(sdk);
+  });
+
+  randomizeButton.addEventListener("click", () => {
+    randomize(sdk);
   });
 
   sdk.navigation.addPage(Page, {
