@@ -1,15 +1,19 @@
 import type { Caido } from "@caido/sdk-frontend";
+import type { API } from "starterkit-plugin-backend";
 
 import type { PluginStorage } from "./types";
+
+type CaidoSDK = Caido<API>;
 
 const Page = "/my-plugin" as const;
 const Commands = {
   increment: "my-plugin.increment",
   decrement: "my-plugin.decrement",
+  randomize: "my-plugin.randomize",
 } as const;
 
-const getCount = (caido: Caido) => {
-  const storage = caido.storage.get() as PluginStorage | undefined;
+const getCount = (sdk: CaidoSDK) => {
+  const storage = sdk.storage.get() as PluginStorage | undefined;
 
   if (storage) {
     return storage.count;
@@ -18,19 +22,24 @@ const getCount = (caido: Caido) => {
   return 0;
 }
 
-const increment = (caido: Caido) => {
-  const count = getCount(caido);
-  caido.storage.set({ count: count + 1 });
+const increment = (sdk: CaidoSDK) => {
+  const count = getCount(sdk);
+  sdk.storage.set({ count: count + 1 });
 }
 
-const decrement = (caido: Caido) => {
-  const count = getCount(caido);
-  caido.storage.set({ count: count - 1 });
+const decrement = async (sdk: CaidoSDK) => {
+  const count = getCount(sdk);
+  sdk.storage.set({ count: count - 1 });
 }
 
-const addPage = (caido: Caido) => {
+const randomize = async (sdk: CaidoSDK) => {
+  const newNumber = await sdk.backend.generateNumber(0, 1000);
+  sdk.storage.set({ count: newNumber });
+}
 
-  const count = getCount(caido);
+const addPage = (sdk: CaidoSDK) => {
+
+  const count = getCount(sdk);
 
   const body = document.createElement("div");
   body.className = "my-plugin";
@@ -42,14 +51,16 @@ const addPage = (caido: Caido) => {
     <div>
       <button class="c-button" data-command="${Commands.increment}">Increment</button>
       <button class="c-button" data-command="${Commands.decrement}">Decrement</button>
+      <button class="c-button" data-command="${Commands.randomize}">Randomize</button>
     </div>
   `;
 
   const countElement = body.querySelector(".my-plugin__value") as HTMLElement;
   const incrementButton = body.querySelector(`[data-command="${Commands.increment}"]`) as HTMLElement;
   const decrementButton = body.querySelector(`[data-command="${Commands.decrement}"]`) as HTMLElement;
+  const randomizeButton = body.querySelector(`[data-command="${Commands.randomize}"]`) as HTMLElement;
 
-  caido.storage.onChange((newStorage) => {
+  sdk.storage.onChange((newStorage) => {
     const storage = newStorage as PluginStorage | undefined;
 
     if (storage) {
@@ -59,44 +70,48 @@ const addPage = (caido: Caido) => {
   });
 
   incrementButton.addEventListener("click", () => {
-    increment(caido);
+    increment(sdk);
   });
 
   decrementButton.addEventListener("click", () => {
-    decrement(caido);
+    decrement(sdk);
   });
 
-  caido.navigation.addPage(Page, {
+  randomizeButton.addEventListener("click", () => {
+    randomize(sdk);
+  });
+
+  sdk.navigation.addPage(Page, {
     body,
   });
 }
 
 
-export const init = (caido: Caido) => {
+export const init = (sdk: CaidoSDK) => {
 
   // Register commands
   // Commands are registered with a unique identifier and a handler function
   // The run function is called when the command is executed
   // These commands can be registered in various places like command palette, context menu, etc.
-  caido.commands.register(Commands.increment, {
+  sdk.commands.register(Commands.increment, {
     name: "Increment",
-    run: () => increment(caido),
+    run: () => increment(sdk),
   });
 
-  caido.commands.register(Commands.decrement, {
+  sdk.commands.register(Commands.decrement, {
     name: "Decrement",
-    run: () => decrement(caido),
+    run: () => decrement(sdk),
   });
 
   // Register command palette items
-  caido.commandPalette.register(Commands.increment);
-  caido.commandPalette.register(Commands.decrement);
+  sdk.commandPalette.register(Commands.increment);
+  sdk.commandPalette.register(Commands.decrement);
 
   // Register page
-  addPage(caido);
+  addPage(sdk);
 
   // Register sidebar
-  caido.sidebar.registerItem("My plugin", Page, {
+  sdk.sidebar.registerItem("My plugin", Page, {
     icon: "fas fa-rocket",
   });
 }

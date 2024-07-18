@@ -22,13 +22,12 @@
 
 This is the starter kit for the Caido plugin system.
 
-For now it only supports Frontend plugins.
-
-It is very early so expect a lot of improvements over the next months.
+This template is full-stack, with both a backend and frontend plugin.
+For frontend only use the [frontend](https://github.com/caido/starterkit-plugin-frontend) starterkit.
 
 ## 🏎️ Usage
 
 1. `pnpm install`
 1. Make some modifications in `src`
 1. `pnpm build`
-1. Upload the plugin.zip in the `dist-zip` folder to your Caido instance
+1. Upload the plugin.zip in the `dist` folder to your Caido instance

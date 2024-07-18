@@ -1,0 +1,18 @@
+{
+  "name": "starterkit-plugin-frontend",
+  "version": "0.1.0",
+  "description": "StarterKit plugin for Caido",
+  "author": "Caido Labs Inc. <dev@caido.io>",
+  "license": "CC0-1.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@caido/sdk-frontend": "0.39.0"
+  },
+  "devDependencies": {
+    "@caido/sdk-backend": "0.39.0",
+    "starterkit-plugin-backend": "workspace:*"
+  }
+}
