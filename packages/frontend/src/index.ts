@@ -3,6 +3,8 @@ import type { API } from "starterkit-plugin-backend";
 
 import type { PluginStorage } from "./types";
 
+import "./styles/style.css";
+
 type CaidoSDK = Caido<API>;
 
 const Page = "/my-plugin" as const;
