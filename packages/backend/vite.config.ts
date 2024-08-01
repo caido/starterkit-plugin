@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
+import { builtinModules } from "module";
 
 export default defineConfig({
   build: {
@@ -11,7 +12,7 @@ export default defineConfig({
     },
     outDir: "../../dist/backend",
     rollupOptions: {
-      external: [/caido:.+/],
+      external: [/caido:.+/, ...builtinModules],
       output: {
         manualChunks: undefined,
       },
