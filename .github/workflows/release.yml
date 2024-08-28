@@ -50,7 +50,6 @@ jobs:
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          name: 'body.md'
           tag: ${{ steps.meta.outputs.version }}
           commit: ${{ github.sha }}
           body: 'Release ${{ steps.meta.outputs.version }}'
