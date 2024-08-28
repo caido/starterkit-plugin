@@ -34,7 +34,6 @@ jobs:
           version: ${{ env.PNPM_VERSION }}
 
       - name: Build package
-        working-directory: dist
         run: pnpm build
 
       - name: Sign package
