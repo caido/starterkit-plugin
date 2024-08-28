@@ -6,7 +6,6 @@ on:
 env:
   NODE_VERSION: 20
   PNPM_VERSION: 9
-  SIGN: true
 
 jobs:
   release:
@@ -39,8 +38,11 @@ jobs:
 
       - name: Sign package
         working-directory: dist
-        if: ${{ env.SIGN }} == "true"
-        run: openssl dgst -sha256 -sign ${{ secrets.PRIVATE_KEY }} -out plugin_package.zip.sig plugin_package.zip
+        if: ${{ secrets.PRIVATE_KEY != '' }}
+        run: |
+          echo "${{ secrets.PRIVATE_KEY }}" > private_key.pem
+          openssl pkeyutl -sign -inkey private_key.pem -out plugin_package.zip.sig -rawin -in plugin_package.zip
+          rm private_key.pem
 
       - name: Create release
         uses: ncipollo/release-action@v1
