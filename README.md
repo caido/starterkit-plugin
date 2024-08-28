@@ -22,7 +22,7 @@
 
 This is the starter kit for the Caido plugin system.
 
-This template is full-stack, with both a backend and frontend plugin.
+This template is full-stack, with both a backend and frontend plugin. This is called a `plugin package`.
 For frontend only use the [frontend](https://github.com/caido/starterkit-plugin-frontend) starterkit.
 
 ## 🏎️ Usage
@@ -30,4 +30,12 @@ For frontend only use the [frontend](https://github.com/caido/starterkit-plugin-
 1. `pnpm install`
 1. Make some modifications in `src`
 1. `pnpm build`
-1. Upload the plugin.zip in the `dist` folder to your Caido instance
+1. Upload the `plugin_package.zip` in the `dist` folder to your Caido instance
+
+## 🗒️ Release
+
+The Github Action `release` can be used to create a release of your `plugin package`.
+
+> If you want to sign your `plugin package`, you need an ed25519 private key named `PRIVATE_KEY` in your Github Action secrets.
+
+To release your plugin to the store, you have to follow a set of operations. Please check out our documentation on the subject.

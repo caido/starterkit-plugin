@@ -1,0 +1,51 @@
+name: 🚀 Release
+
+on:
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: 20
+  PNPM_VERSION: 9
+  SIGN: true
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+
+      - name: Check version
+        id: meta
+        run: |
+          VERSION=$(jq -r .version manifest.json)
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Build & Sign plugin
+        working-directory: dist
+        run: |
+          pnpm build
+          if [[ "${{ env.SIGN }}" == "true" ]]; then
+            openssl dgst -sha256 -sign ${{ secrets.PRIVATE_KEY }} -out plugin_package.zip.sig plugin_package.zip
+          fi
+
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          name: 'body.md'
+          tag: ${{ steps.meta.outputs.version }}
+          commit: main
+          body: 'Release ${{ steps.meta.outputs.version }}'
+          artifacts: 'dist/plugin_package.zip,dist/plugin_package.zip.sig'
