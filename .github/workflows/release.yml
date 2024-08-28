@@ -38,11 +38,14 @@ jobs:
 
       - name: Sign package
         working-directory: dist
-        if: ${{ secrets.PRIVATE_KEY != '' }}
         run: |
-          echo "${{ secrets.PRIVATE_KEY }}" > private_key.pem
-          openssl pkeyutl -sign -inkey private_key.pem -out plugin_package.zip.sig -rawin -in plugin_package.zip
-          rm private_key.pem
+          if [[ -z "${{ secrets.PRIVATE_KEY }}" ]]; then
+            echo "Set an ed25519 key as PRIVATE_KEY in GitHub Action secret to sign."
+          else
+            echo "${{ secrets.PRIVATE_KEY }}" > private_key.pem
+            openssl pkeyutl -sign -inkey private_key.pem -out plugin_package.zip.sig -rawin -in plugin_package.zip
+            rm private_key.pem
+          fi
 
       - name: Create release
         uses: ncipollo/release-action@v1
