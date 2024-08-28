@@ -33,19 +33,20 @@ jobs:
         with:
           version: ${{ env.PNPM_VERSION }}
 
-      - name: Build & Sign plugin
+      - name: Build package
         working-directory: dist
-        run: |
-          pnpm build
-          if [[ "${{ env.SIGN }}" == "true" ]]; then
-            openssl dgst -sha256 -sign ${{ secrets.PRIVATE_KEY }} -out plugin_package.zip.sig plugin_package.zip
-          fi
+        run: pnpm build
+
+      - name: Sign package
+        working-directory: dist
+        if: ${{ env.SIGN }} == "true"
+        run: openssl dgst -sha256 -sign ${{ secrets.PRIVATE_KEY }} -out plugin_package.zip.sig plugin_package.zip
 
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
           name: 'body.md'
           tag: ${{ steps.meta.outputs.version }}
-          commit: main
+          commit: ${{ github.sha }}
           body: 'Release ${{ steps.meta.outputs.version }}'
           artifacts: 'dist/plugin_package.zip,dist/plugin_package.zip.sig'
