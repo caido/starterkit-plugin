@@ -11,6 +11,5 @@
       "automerge": false
     }
   ],
-  "ignoreDeps": ["*"],
   "enabledManagers": ["npm"]
 }
