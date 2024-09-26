@@ -1,7 +1,7 @@
 {
   "extends": ["config:recommended"],
   "timezone": "America/New_York",
-  "schedule": ["every day"],
+  "schedule": ["before 4am"],
   "labels": ["dependency"],
   "rebaseWhen": "conflicted",
   "packageRules": [
