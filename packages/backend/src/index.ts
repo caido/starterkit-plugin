@@ -12,6 +12,6 @@ export type API = DefineAPI<{
   generateNumber: typeof generateNumber;
 }>;
 
-export function init(sdk: SDK) {
+export function init(sdk: SDK<API>) {
   sdk.api.register("generateNumber", generateNumber);
 }

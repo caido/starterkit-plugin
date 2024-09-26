@@ -6,7 +6,8 @@
   "license": "CC0-1.0",
   "type": "module",
   "scripts": {
-    "build": "node scripts/clean.js && pnpm -r build && node scripts/pack.js"
+    "build": "node scripts/clean.js && pnpm -r build && node scripts/pack.js",
+    "typecheck": "pnpm -r typecheck"
   },
   "devDependencies": {
     "@caido/plugin-manifest": "0.1.3",

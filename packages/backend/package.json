@@ -7,9 +7,10 @@
   "type": "module",
   "types": "src/index.ts",
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@caido/sdk-backend": "0.39.0"
+    "@caido/sdk-backend": "0.41.0"
   }
 }

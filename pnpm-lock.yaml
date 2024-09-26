@@ -24,18 +24,18 @@ importers:
   packages/backend:
     devDependencies:
       '@caido/sdk-backend':
-        specifier: 0.39.0
-        version: 0.39.0
+        specifier: 0.41.0
+        version: 0.41.0
 
   packages/frontend:
     dependencies:
       '@caido/sdk-frontend':
-        specifier: 0.39.0
-        version: 0.39.0
+        specifier: 0.41.0
+        version: 0.41.0(@codemirror/view@6.34.0)
     devDependencies:
       '@caido/sdk-backend':
-        specifier: 0.39.0
-        version: 0.39.0
+        specifier: 0.41.0
+        version: 0.41.0
       starterkit-plugin-backend:
         specifier: workspace:*
         version: link:../backend
@@ -45,11 +45,25 @@ packages:
   '@caido/plugin-manifest@0.1.3':
     resolution: {integrity: sha512-6PK/mIz2vIImgNFmc34Smiz86ifE+B962xz7uR4MPMxRaRlMlgfL8IvPkbpJyRaXb0mDDVqGzMB82HddpyGQSw==}
 
-  '@caido/sdk-backend@0.39.0':
-    resolution: {integrity: sha512-SIoC7TBfXhRgU6i1n3OWWMoJUL8IoprB4KMp+Bgq0gPczn8nYioofXLUpYht8W9pHBiMvY6jlcEqYS7ZLimxVg==}
+  '@caido/quickjs-types@0.7.0':
+    resolution: {integrity: sha512-F+vORpADqFVjKoC8TDs5vnsP2BEogwgw067pGiwbezCBw/9BzSIuLN5zJRyhvV6Sdgyy4cT8M6oANDpD1ZqLYA==}
 
-  '@caido/sdk-frontend@0.39.0':
-    resolution: {integrity: sha512-XIY24OLh6hcefMdltgfvae2E4t8EhPpikYCihthYlSLJ+LaabRTPePVcdPS4avlMkQPIWm+S19cHCn+lNuNx6Q==}
+  '@caido/sdk-backend@0.41.0':
+    resolution: {integrity: sha512-H35HvOZ7Kl1IIR6QsLaJHKheEYg2CMbY1TWRqA3NvRcv/AhgR6K70hFr28o9CqvU38eNcNGHQtgxU1xRBQ5Dug==}
+
+  '@caido/sdk-frontend@0.41.0':
+    resolution: {integrity: sha512-fX6QiDGR059zBiiC4V69ZATnZ44kcQQF1B+Pzga95Ze98c/5C6I7jHOsjNuflU87mxBmJB352YMWEmkWCf9yOA==}
+    peerDependencies:
+      '@codemirror/view': ^6.0.0
+
+  '@caido/sdk-shared@0.1.0':
+    resolution: {integrity: sha512-blffEE1ha74X/FKRC31HEh94b7gZ8riZqLDbD1Hpp7ihdlvaiQgap8i2Z6BppAaycks83+rUXTLLR6DxXNvdiQ==}
+
+  '@codemirror/state@6.4.1':
+    resolution: {integrity: sha512-QkEyUiLhsJoZkbumGZlswmAhA7CBU02Wrz7zvH4SrcifbsqwlXShVXg65f3v/ts57W3dqyamEriMhij1Z3Zz4A==}
+
+  '@codemirror/view@6.34.0':
+    resolution: {integrity: sha512-2vKJ79tOcVfgPYVJM2XjcL1BH5Bsl7/tgn9ilBj3XWeCS5kTRy/NE4FHEj4aMylOl/D3IPNsmZH0WPlB+DyIdA==}
 
   '@esbuild/aix-ppc64@0.20.2':
     resolution: {integrity: sha512-D+EBOJHXdNZcLJRBkhENNG8Wji2kgc9AZ9KiPr1JuZjsNtyHzrsfLRrY0tk2H2aoFu6RANO1y1iPPUCDYWkb5g==}
@@ -324,6 +338,11 @@ packages:
     resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
     engines: {node: ^10 || ^12 || >=14}
 
+  prettier@3.3.2:
+    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
@@ -355,6 +374,9 @@ packages:
 
   string_decoder@1.1.1:
     resolution: {integrity: sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==}
+
+  style-mod@4.1.2:
+    resolution: {integrity: sha512-wnD1HyVqpJUI2+eKZ+eo1UwghftP6yuFheBqqe+bWCotBjC2K1YnteJILRMs3SM4V/0dLEW1SC27MWP5y+mwmw==}
 
   typescript@5.4.3:
     resolution: {integrity: sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg==}
@@ -395,15 +417,37 @@ packages:
       terser:
         optional: true
 
+  w3c-keyname@2.2.8:
+    resolution: {integrity: sha512-dpojBhNsCNN7T82Tm7k26A6G9ML3NkhDsnw9n/eoxSRlVBB4CEtIQ/KTCLI2Fwf3ataSXRhYFkQi3SlnFwPvPQ==}
+
 snapshots:
 
   '@caido/plugin-manifest@0.1.3':
     dependencies:
       ajv: 8.16.0
 
-  '@caido/sdk-backend@0.39.0': {}
+  '@caido/quickjs-types@0.7.0':
+    dependencies:
+      prettier: 3.3.2
 
-  '@caido/sdk-frontend@0.39.0': {}
+  '@caido/sdk-backend@0.41.0':
+    dependencies:
+      '@caido/quickjs-types': 0.7.0
+      '@caido/sdk-shared': 0.1.0
+
+  '@caido/sdk-frontend@0.41.0(@codemirror/view@6.34.0)':
+    dependencies:
+      '@codemirror/view': 6.34.0
+
+  '@caido/sdk-shared@0.1.0': {}
+
+  '@codemirror/state@6.4.1': {}
+
+  '@codemirror/view@6.34.0':
+    dependencies:
+      '@codemirror/state': 6.4.1
+      style-mod: 4.1.2
+      w3c-keyname: 2.2.8
 
   '@esbuild/aix-ppc64@0.20.2':
     optional: true
@@ -595,6 +639,8 @@ snapshots:
       picocolors: 1.0.0
       source-map-js: 1.2.0
 
+  prettier@3.3.2: {}
+
   process-nextick-args@2.0.1: {}
 
   punycode@2.3.1: {}
@@ -643,6 +689,8 @@ snapshots:
     dependencies:
       safe-buffer: 5.1.2
 
+  style-mod@4.1.2: {}
+
   typescript@5.4.3: {}
 
   uri-js@4.4.1:
@@ -658,3 +706,5 @@ snapshots:
       rollup: 4.16.4
     optionalDependencies:
       fsevents: 2.3.3
+
+  w3c-keyname@2.2.8: {}
