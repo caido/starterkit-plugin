@@ -10,10 +10,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@caido/sdk-frontend": "0.41.0"
+    "@caido/sdk-frontend": "0.42.0"
   },
   "devDependencies": {
-    "@caido/sdk-backend": "0.41.0",
+    "@caido/sdk-backend": "0.42.0",
     "starterkit-plugin-backend": "workspace:*"
   }
 }
