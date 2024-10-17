@@ -11,6 +11,6 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@caido/sdk-backend": "0.41.0"
+    "@caido/sdk-backend": "0.42.0"
   }
 }
