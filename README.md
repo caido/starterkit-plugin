@@ -1,3 +1,6 @@
+> [!WARNING]
+> This repository is archived and no longer maintained. For updated instructions on developing plugins, please refer to our [repository guide](https://developer.caido.io/guides/distribution/repository.html).
+
 <div align="center">
   <img width="1000" alt="image" src="https://user-images.githubusercontent.com/6225588/211916659-567751d1-0225-402b-9141-4145c18b0834.png">
 
